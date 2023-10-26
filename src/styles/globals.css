@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --fam-white: #eff4eb;
+    --fam-white-light: #f8faf6;
+    --fam-white-dark: #e0e7db;
+    --fam-white-darker: #cbd4c5;
+    --fam-black: #363f40;
+    --fam-black-lighter: #94a8a7;
+    --fam-black-light: #5e6d6e;
+    --fam-black-dark: #1b2324;
+    --fam-orange: #eb3b15;
+    --fam-orange-light: #d13200;
+    --fam-orange-dark: #d13200;
+    --fam-blue: #5853c4;
+    --fam-blue-light: #b1c1f2;
+    --fam-blue-dark: #22156f;
+    --fam-brown: #8c3a17;
+    --fam-brown-light: #ac5834;
+    --fam-brown-dark: #61311c;
+    --fam-success: #16bf6f;
+    --fam-error: #c83636;
+    --search-width: 400px;
+  }
+
+  *::selection {
+    color: var(--fam-white-light);
+    background: var(--fam-orange);
+  }
+
+  *:focus {
+    outline-color: var(--fam-blue);
+    outline: none;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.1;
+  }
+
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  textarea,
+  input {
+    border: 0;
+    text-size-adjust: none;
+  }
+
+  p a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  p a:hover {
+    text-decoration-color: var(--fam-blue);
+  }
+}
+
+@layer components {
+  .nav-height {
+    height: 62px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .nav-height {
+      height: 70px;
+    }
+  }
+
+  .input-base {
+    background: transparent;
+    padding: 0 16px;
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .input-base-sm {
+    background: transparent;
+    padding: 0 14px;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .input-height {
+    height: 45px;
+    line-height: 1;
+  }
+
+  .input-height-sm {
+    height: 38px;
+    line-height: 1;
+  }
+
+  .accordion a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--fam-orange);
+  }
+
+  .accordion a:hover {
+    color: var(--fam-orange);
+  }
+}
+
+@layer utilities {
+  .hover-underline {
+    transition: all 200ms ease-out;
+    text-underline-offset: 4px;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+  }
+
+  .hover-underline:hover {
+    text-decoration-color: inherit;
+  }
+
+  .circle-icon {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-pt {
+    padding-top: clamp(35px, 5vh, 65px);
+  }
+  .section-pb {
+    padding-bottom: clamp(35px, 5vh, 65px);
+  }
+  .section-pt-lg {
+    padding-top: clamp(40px, 6.5vh, 80px);
+  }
+  .section-pb-lg {
+    padding-bottom: clamp(40px, 6.5vh, 80px);
+  }
+  .section-pt-sm {
+    padding-top: clamp(20px, 3.6vh, 30px);
+  }
+  .section-pb-sm {
+    padding-bottom: clamp(20px, 3.6vh, 30px);
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .section-pt {
+      padding-top: clamp(80px, 7.2vh, 100px);
+    }
+    .section-pb {
+      padding-bottom: clamp(80px, 7.2vh, 100px);
+    }
+    .section-pt-lg {
+      padding-top: clamp(90px, 9.5vh, 140px);
+    }
+    .section-pb-lg {
+      padding-bottom: clamp(90px, 9.5vh, 140px);
+    }
+    .section-pt-sm {
+      padding-top: clamp(30px, 5.2vh, 52px);
+    }
+    .section-pb-sm {
+      padding-bottom: clamp(30px, 5.2vh, 52px);
+    }
+  }
+
+  .animate-enter-bottom {
+    animation: enterBottom 250ms ease;
+  }
+
+  @keyframes enterBottom {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  .animate-exit-bottom {
+    animation: exitBottom 250ms ease;
+  }
+
+  @keyframes exitBottom {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+  }
+
+  .transition-100 {
+    transition: all 100ms ease-out;
+  }
+  .transition-200 {
+    transition: all 200ms ease-out;
+  }
+  .transition-300 {
+    transition: all 300ms ease-out;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none !important;
+  }
+}

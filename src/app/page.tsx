@@ -1,113 +1,86 @@
-import Image from 'next/image'
+import Image from "next/image";
+import HeaderMobileImage from "@/assets/fm-header-mobile.webp";
+import HeaderLeftImage from "@/assets/fm-header-left.webp";
+import HeaderRightImage from "@/assets/fm-header-right.webp";
+import { FmLogoIcon } from "@/components/Logos";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="w-full min-h-[100dvh] h-full flex flex-col items-center justify-start md:justify-center">
+      {/* Desktop Images */}
+      <div className="hidden md:block">
+        <div className="-z-10 absolute top-1/2 -translate-y-1/2 -left-1/2 w-full md:h-[500px] md:min-h-[500px]">
+          <Image
+            className="object-scale-down object-right-top w-full h-full md:-translate-x-[200px] lg:-translate-x-[280px] lg:w-[1000px]"
+            src={HeaderLeftImage}
+            alt="family-meal-header-left"
+            fill
+            sizes="1000px"
+          />
+        </div>
+        <div className="-z-10 absolute top-1/2 -translate-y-1/2 -right-1/2 w-full md:h-[500px] md:min-h-[500px]">
+          <Image
+            className="object-scale-down object-left-top w-full h-full md:translate-x-[200px] lg:translate-x-[280px] lg:w-[1000px]"
+            src={HeaderRightImage}
+            alt="family-meal-header-right"
+            fill
+            sizes="1000px"
+          />
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+      {/* Mobile Image */}
+      <div className="md:hidden w-full aspect-[6/5] relative">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          className="object-contain w-full h-full"
+          src={HeaderMobileImage}
+          alt="family-meal-header-mobile"
+          fill
+          sizes="100vw"
         />
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+      <section className="w-11/12 md:max-w-[400px] lg:max-w-[500px] flex flex-col gap-6 md:gap-8">
+        <FmLogoIcon />
+        <h1 className="font-display text-7xl lg:text-9xl">
+          Buy & Sell Lutong Bahay in Manila
+        </h1>
+        <div className="text-md lg:text-xl">
+          Family Meal is the 1st marketplace for cooks in Manila. No
+          restaurants, no cloud kitchens, just cooks like you. Launching early
+          2024.
+        </div>
+        <form
+          action="https://familymeal.us10.list-manage.com/subscribe/post"
+          method="POST"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          <input
+            type="hidden"
+            name="u"
+            value="9c1d49c16b4f29b4d8f5da1b0"
+          />
+          <input
+            type="hidden"
+            name="id"
+            value="ed0b3e60bb"
+          />
+          <div className="flex flex-col gap-2 md:flex-row md:gap-1">
+            <div className="w-full h-fit flex items-center bg-fam-white-light shadow-sm ring-1 ring-inset ring-fam-white-dark focus-within:ring-1 focus-within:ring-fam-blue rounded-xl px-4">
+              <input
+                placeholder="adobo@sinigang.com"
+                type="email"
+                name="MERGE0"
+                id="MERGE0"
+                className="w-full input-height input-base border-0 px-0 py-0.5 text-fam-black bg-transparent placeholder:opacity-60 focus:ring-0 leading-0"
+              />
+            </div>
+            <input
+              type="submit"
+              name="submit"
+              value="Join Seller Waitlist"
+              className="input-height input-base rounded-xl bg-fam-blue text-center w-full md:w-fit md:hover:bg-fam-black text-fam-white focus:scale-95 transition-100 cursor-pointer"
+            />
+          </div>
+        </form>
+      </section>
     </main>
-  )
+  );
 }
