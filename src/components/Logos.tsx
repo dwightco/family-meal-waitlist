@@ -35,9 +35,9 @@ interface FmLogoIcon {
 export function FmLogoIcon({ width, className }: FmLogoIcon) {
   return (
     <div
-      className={`flex items-center ${width ? width : "w-[50px]"} ${
+      className={`${width ? width : "w-[50px]"} ${
         className && className
-      } aspect-square relative`}
+      } aspect-[196/140]`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

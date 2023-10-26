@@ -29,24 +29,23 @@ export default function Home() {
         </div>
       </div>
       {/* Mobile Image */}
-      <div className="md:hidden w-full aspect-[6/5] relative">
+      <div className="md:hidden w-full aspect-[7/5] relative">
         <Image
-          className="object-contain w-full h-full"
+          className="object-cover object-bottom w-full h-full"
           src={HeaderMobileImage}
           alt="family-meal-header-mobile"
           fill
           sizes="100vw"
         />
       </div>
-      <section className="w-11/12 md:max-w-[400px] lg:max-w-[500px] flex flex-col gap-6 md:gap-8">
+      <section className="w-11/12 md:max-w-[400px] lg:max-w-[500px] flex flex-col gap-6 md:gap-8 -mt-4 md:mt-0 pb-10">
         <FmLogoIcon />
         <h1 className="font-display text-7xl lg:text-9xl">
           Buy & Sell Lutong Bahay in Manila
         </h1>
         <div className="text-md lg:text-xl">
           Family Meal is the 1st marketplace for cooks in Manila. No
-          restaurants, no cloud kitchens, just cooks like you. Launching early
-          2024.
+          restaurants, no cloud kitchens, just cooks. Launching 2024.
         </div>
         <form
           action="https://familymeal.us10.list-manage.com/subscribe/post"
